@@ -1,0 +1,193 @@
+/* About Us Page Styles */
+
+.page-title {
+    text-align: center;
+    margin: 2rem 0 4rem;
+    position: relative;
+    padding: 4rem 0;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.page-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.page-title h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.page-title .number {
+    font-size: 3.5rem;
+    margin-right: 1rem;
+}
+
+/* About Intro Section */
+.about-intro {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.about-intro h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.about-intro h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #00c6b0, #6a50c7);
+    border-radius: 2px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* About Cards */
+.about-sections {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.about-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    padding: 2rem;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.about-icon {
+    flex: 0 0 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: #00c6b0;
+    margin-right: 2rem;
+}
+
+.about-details {
+    flex: 1;
+}
+
+.about-details h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0 0 1rem 0;
+    position: relative;
+    display: inline-block;
+}
+
+.about-details h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #00c6b0, #6a50c7);
+    border-radius: 2px;
+}
+
+.about-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.about-details ul {
+    margin: 0 0 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.about-details li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .about-card {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-icon {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-details h3 {
+        text-align: center;
+    }
+    
+    .about-details h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .page-title h2 {
+        font-size: 2rem;
+    }
+    
+    .page-title .number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-details h3 {
+        font-size: 1.5rem;
+    }
+    
+    .about-details p,
+    .about-details li {
+        font-size: 1rem;
+    }
+} 
