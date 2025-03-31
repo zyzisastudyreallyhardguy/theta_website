@@ -1,0 +1,217 @@
+/* Publications Page Styles */
+
+.page-title {
+    text-align: center;
+    margin: 2rem 0 4rem;
+    position: relative;
+    padding: 4rem 0;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.page-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.page-title h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.page-title .number {
+    font-size: 3.5rem;
+    margin-right: 1rem;
+}
+
+/* Publications Intro Section */
+.publications-intro {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.publications-intro h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.publications-intro h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #00c6b0, #6a50c7);
+    border-radius: 2px;
+}
+
+.publications-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Publications List */
+.publications-list {
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 1rem;
+}
+
+.publication-item {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0;
+}
+
+.publication-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.publication-year {
+    background: linear-gradient(145deg, #00c6b0, #6a50c7);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.publication-details {
+    flex: 1;
+    padding: 2rem;
+}
+
+.publication-title {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 0 1rem 0;
+    line-height: 1.3;
+}
+
+.publication-authors {
+    font-size: 1.1rem;
+    color: #00c6b0;
+    margin-bottom: 0.5rem;
+}
+
+.publication-journal {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.publication-doi {
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, A0.7);
+}
+
+.publication-doi a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.publication-doi a:hover {
+    color: #00c6b0;
+    text-decoration: underline;
+}
+
+.publication-actions {
+    margin-bottom: 1.5rem;
+}
+
+.publication-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(90deg, #00c6b0, #6a50c7);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(106, 80, 199, 0.4);
+}
+
+.publication-abstract {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.publication-abstract h4 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.publication-abstract p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .publication-item {
+        flex-direction: column;
+    }
+    
+    .publication-year {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .page-title h2 {
+        font-size: 2rem;
+    }
+    
+    .page-title .number {
+        font-size: 2.5rem;
+    }
+    
+    .publication-title {
+        font-size: 1.3rem;
+    }
+} 
