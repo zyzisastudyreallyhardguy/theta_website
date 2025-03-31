@@ -1,0 +1,261 @@
+/* Join Us Page Styles */
+
+.page-title {
+    text-align: center;
+    margin: 2rem 0 4rem;
+    position: relative;
+    padding: 4rem 0;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.page-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.page-title h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.page-title .number {
+    font-size: 3.5rem;
+    margin-right: 1rem;
+    background: linear-gradient(90deg, #5a73cc, #6a50c7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Join Intro Section */
+.join-intro {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.join-intro h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.join-intro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Position Cards */
+.positions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+}
+
+.position-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.position-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.position-header {
+    padding: 2rem;
+    background: linear-gradient(145deg, rgba(0, 198, 176, 0.1), rgba(106, 80, 199, 0.1));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.position-header h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0;
+}
+
+.position-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00c6b0;
+}
+
+.position-details {
+    padding: 2rem;
+}
+
+.position-details h4 {
+    font-size: 1.3rem;
+    color: #00c6b0;
+    margin: 0 0 1rem 0;
+}
+
+.position-details ul {
+    margin: 0 0 2rem 0;
+    padding-left: 1.5rem;
+}
+
+.position-details li {
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.apply-button {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.gradient-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(90deg, #00c6b0, #6a50c7);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(106, 80, 199, 0.4);
+}
+
+/* Application Form */
+.application-section {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #00c6b0, #6a50c7);
+    border-radius: 2px;
+}
+
+.application-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    width: 100%;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+input, select, textarea {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #00c6b0;
+}
+
+.form-submit {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.submit-btn {
+    padding: 1rem 3rem;
+    background: linear-gradient(90deg, #00c6b0, #6a50c7);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(106, 80, 199, 0.4);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .positions-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .position-header {
+        padding: 1.5rem;
+    }
+    
+    .position-details {
+        padding: 1.5rem;
+    }
+} 

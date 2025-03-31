@@ -1,0 +1,286 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0rem;
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        position: relative;
+        top: 0px;
+        left: 10px;
+        bottom: 50;
+    }
+}
+
+.logo {
+
+    width: 300px;
+    height: 150px;
+}
+
+.logo-text h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.logo-text p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.institutions {
+    text-align: right;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 30px;
+}
+
+.logo-container a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Main content styles */
+.hero {
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 2rem 0;
+    position: relative;
+    margin: 0 20px;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+    margin: 20px;
+    margin-top:-150px;
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 4rem;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #00c6b0, #6a50c7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 4rem;
+}
+
+/* Navigation section */
+@media (min-height:800px) {
+    .navigation {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 500px; /* Push it to the bottom */
+        padding: 20px 0;
+        position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* Optional: semi-transparent background */
+    z-index: 10; /* Ensure it appears above other content */
+    }
+}
+
+
+.nav-item {
+    cursor: pointer;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-item:hover {
+    transform: translateY(-5px);
+}
+
+.nav-item h3 {
+    font-size: 2.0rem;
+    font-weight: normal;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.number {
+    font-size: 5.0rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    /* background: linear-gradient(90deg, #00c6b0, #6a50c7); */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.nav-item:hover .number {
+    opacity: 1;
+}
+
+/* .nav-item:nth-child(1) .number {
+    background: linear-gradient(90deg, #00c6b0, #3da8bd);
+}
+
+.nav-item:nth-child(2) .number {
+    background: linear-gradient(90deg, #3da8bd, #4a8fc4);
+}
+
+.nav-item:nth-child(3) .number {
+    background: linear-gradient(90deg, #4a8fc4, #5a73cc);
+}
+
+.nav-item:nth-child(4) .number {
+    background: linear-gradient(90deg, #5a73cc, #6a50c7);
+} */
+
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .institutions {
+        text-align: center;
+    }
+
+    .main-title, .subtitle, .gradient-text {
+        font-size: 2.5rem;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+/* Video Background Styles */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    border-radius: 20px; /* Add rounded corners to the video container */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add subtle shadow for depth */
+}
+
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    z-index: 1;
+    border-radius: 20px; /* Match the border-radius of the container */
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+/* Video Play Button */
+.video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.video-play-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 198, 176, 0.5);
+}
+
+.video-play-button svg {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px; /* Offset the play icon slightly */
+}
+
+/* Ensure video takes up full space and maintains aspect ratio */
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+} 

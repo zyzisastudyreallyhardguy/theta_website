@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+  <rect width="150" height="150" fill="#333" />
+  
+  <!-- Simple outline of a person -->
+  <circle cx="75" cy="55" r="25" fill="#555" />
+  
+  <!-- Body shape -->
+  <path d="M40 140 Q75 80 110 140" fill="#555" />
+  
+  <path d="M75 80 Q45 95 45 120" stroke="#555" stroke-width="8" fill="none" />
+  <path d="M75 80 Q105 95 105 120" stroke="#555" stroke-width="8" fill="none" />
+  
+  <!-- Subtle gradient overlay -->
+  <rect width="150" height="150" fill="url(#profileGradient)" opacity="0.2" />
+  
+  <defs>
+    <linearGradient id="profileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00c6b0" />
+      <stop offset="100%" stop-color="#6a50c7" />
+    </linearGradient>
+  </defs>
+</svg> 
