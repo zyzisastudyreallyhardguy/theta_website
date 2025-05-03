@@ -150,96 +150,6 @@
     box-shadow: 0 5px 15px rgba(106, 80, 199, 0.4);
 }
 
-/* Application Form */
-.application-section {
-    max-width: 800px;
-    margin: 0 auto 4rem;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-}
-
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #fff;
-    position: relative;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #00c6b0, #6a50c7);
-    border-radius: 2px;
-}
-
-.application-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-row {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.form-group {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.full-width {
-    width: 100%;
-}
-
-label {
-    margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-input, select, textarea {
-    padding: 0.8rem;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(255, 255, 255, 0.05);
-    color: white;
-    font-family: inherit;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #00c6b0;
-}
-
-.form-submit {
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.submit-btn {
-    padding: 1rem 3rem;
-    background: linear-gradient(90deg, #00c6b0, #6a50c7);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(106, 80, 199, 0.4);
-}
-
 /* Application Instructions */
 .application-instructions {
     background-color: rgba(255, 255, 255, 0.05);
@@ -352,5 +262,231 @@ input:focus, select:focus, textarea:focus {
     
     .position-details {
         padding: 1.5rem;
+    }
+}
+
+/* Custom Modal Dialog */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.custom-modal.show {
+    display: block;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    z-index: 1001;
+}
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 600px;
+    background: linear-gradient(145deg, #101620, #172030);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    z-index: 1002;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.custom-modal.show .modal-container {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.modal-header {
+    padding: 20px 25px;
+    background: linear-gradient(90deg, rgba(0, 198, 176, 0.2), rgba(106, 80, 199, 0.2));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 198, 176, 0.3);
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.2s;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-close-btn:hover {
+    color: #00c6b0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-body {
+    padding: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.modal-content {
+    padding: 25px;
+}
+
+.modal-intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.application-materials {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 4px solid #00c6b0;
+}
+
+.application-materials h4 {
+    color: #00c6b0;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.application-materials ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.application-materials li {
+    padding: 10px 0;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.application-materials li:last-child {
+    border-bottom: none;
+}
+
+.material-icon {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.email-details {
+    background-color: rgba(106, 80, 199, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid #6a50c7;
+}
+
+.email-field {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.email-field:last-child {
+    margin-bottom: 0;
+}
+
+.email-label {
+    min-width: 80px;
+    color: #6a50c7;
+    font-weight: bold;
+}
+
+.email-value {
+    color: rgba(255, 255, 255, 0.9);
+    word-break: break-word;
+}
+
+.modal-footer {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.close-modal-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00c6b0, #6a50c7);
+    color: white;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.close-modal-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(106, 80, 199, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-container {
+        width: 95%;
+    }
+    
+    .email-field {
+        flex-direction: column;
+    }
+    
+    .email-label {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-intro {
+        font-size: 1rem;
+    }
+    
+    .application-materials, 
+    .email-details {
+        padding: 15px;
     }
 } 

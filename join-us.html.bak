@@ -6,8 +6,6 @@
     <title>THETA TEAM - Join Us</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/join-us.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>T</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>T</text></svg>">
 </head>
 <body>
     <header>
@@ -42,7 +40,7 @@
                 <h3>Be Part of Our Journey</h3>
                 <p>THETA TEAM is at the forefront of developing AI-powered solutions for real-world medical challenges. We're seeking talented and passionate individuals to join our multidisciplinary team working at the intersection of artificial intelligence and medicine.</p>
                 <p>Our collaborative environment brings together experts from computer science, medicine, biology, and engineering to develop innovative therapies and diagnostic tools that can make a real difference in patient care.</p>
-                <p>We also welcome collaboration opportunities! Please contact us via email at: yizhen.zheng@monash.edu/huan.koh@monash.edu</p
+            </div>
         </section>
 
         <!-- Position Sections -->
@@ -169,169 +167,66 @@
     <script src="js/main.js"></script>
     
     <!-- Custom Modal Dialog -->
+    <div id="apply-modal" class="custom-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Apply to THETA TEAM</h3>
+                <button class="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <p class="modal-intro">To apply, please send your application materials via email:</p>
+                    
+                    <div class="application-materials">
+                        <h4>Required Materials:</h4>
+                        <ul>
+                            <li><span class="material-icon">📄</span> CV/Resume</li>
+                            <li><span class="material-icon">👤</span> Self Introduction</li>
+                            <li><span class="material-icon">📝</span> Statement of Interest (Optional)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="email-details">
+                        <div class="email-field">
+                            <span class="email-label">To:</span>
+                            <span class="email-value">yizhen.zheng@monash.edu, huan.koh@monash.edu</span>
+                        </div>
+                        <div class="email-field">
+                            <span class="email-label">CC:</span>
+                            <span class="email-value">s.pan@griffith.edu, vivek.naranbhai@monash.edu</span>
+                        </div>
+                        <div class="email-field">
+                            <span class="email-label">Subject:</span>
+                            <span class="email-value">THETA TEAM Application - [Your Name] - [Position of Interest]</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button class="close-modal-btn gradient-btn">Got it</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
-    // Simple dialog function
+    // Function to show application instructions modal
     function showApplyDialog(event) {
         event.preventDefault();
-        
-        // Create modal overlay
-        const overlay = document.createElement('div');
-        overlay.className = 'modal-overlay';
-        
-        // Create modal content
-        const modal = document.createElement('div');
-        modal.className = 'modal-popup';
-        
-        // Add title
-        const title = document.createElement('h3');
-        title.textContent = 'Apply to THETA TEAM';
-        
-        // Add application info
-        const content = document.createElement('div');
-        content.className = 'modal-popup-content';
-        content.innerHTML = `
-            <p>To apply, please send your application materials via email:</p>
-            
-            <div class="required-materials">
-                <h4>Required Materials:</h4>
-                <ul>
-                    <li>📄 CV/Resume</li>
-                    <li>👤 Self Introduction</li>
-                    <li>📝 Statement of Interest (Optional)</li>
-                </ul>
-            </div>
-            
-            <div class="email-info">
-                <p><strong>To:</strong> yizhen.zheng@monash.edu, huan.koh@monash.edu</p>
-                <p><strong>CC:</strong> s.pan@griffith.edu, vivek.naranbhai@monash.edu</p>
-                <p><strong>Subject:</strong> THETA TEAM Application - [Your Name] - [Position of Interest]</p>
-            </div>
-        `;
-        
-        // Add close button
-        const closeBtn = document.createElement('button');
-        closeBtn.className = 'modal-popup-close btn gradient-btn';
-        closeBtn.textContent = 'Got it';
-        
-        // Build modal
-        modal.appendChild(title);
-        modal.appendChild(content);
-        modal.appendChild(closeBtn);
-        overlay.appendChild(modal);
-        document.body.appendChild(overlay);
-        
-        // Add close handler
-        const closeModal = () => {
-            document.body.removeChild(overlay);
-        };
-        
-        closeBtn.addEventListener('click', closeModal);
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) closeModal();
-        });
+        document.getElementById('apply-modal').classList.add('show');
+        document.body.classList.add('modal-open');
+    }
+    
+    // Set up modal close handlers
+    document.querySelector('.modal-close-btn').addEventListener('click', closeModal);
+    document.querySelector('.close-modal-btn').addEventListener('click', closeModal);
+    document.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+    
+    function closeModal() {
+        document.getElementById('apply-modal').classList.remove('show');
+        document.body.classList.remove('modal-open');
     }
     </script>
-    
-    <style>
-    /* Modal Dialog Styles */
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(5px);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        animation: fadeIn 0.2s ease-out;
-    }
-    
-    .modal-popup {
-        background: linear-gradient(145deg, #101620, #172030);
-        border-radius: 15px;
-        width: 90%;
-        max-width: 500px;
-        padding: 25px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-        position: relative;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        animation: slideUp 0.3s ease-out;
-    }
-    
-    .modal-popup h3 {
-        margin-top: 0;
-        color: #00c6b0;
-        border-bottom: 2px solid rgba(106, 80, 199, 0.3);
-        padding-bottom: 12px;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    
-    .modal-popup-content {
-        margin-bottom: 20px;
-    }
-    
-    .modal-popup-content p {
-        margin-top: 0;
-        margin-bottom: 20px;
-        color: #fff;
-        text-align: center;
-    }
-    
-    .required-materials {
-        background-color: rgba(0, 198, 176, 0.1);
-        border-radius: 10px;
-        padding: 15px;
-        margin-bottom: 20px;
-        border-left: 4px solid #00c6b0;
-    }
-    
-    .required-materials h4 {
-        margin-top: 0;
-        color: #00c6b0;
-        margin-bottom: 10px;
-    }
-    
-    .required-materials ul {
-        margin: 0;
-        padding-left: 15px;
-    }
-    
-    .required-materials li {
-        margin-bottom: 8px;
-        color: rgba(255, 255, 255, 0.9);
-    }
-    
-    .email-info {
-        background-color: rgba(106, 80, 199, 0.1);
-        border-radius: 10px;
-        padding: 15px;
-        border-left: 4px solid #6a50c7;
-    }
-    
-    .email-info p {
-        margin: 8px 0;
-        text-align: left;
-    }
-    
-    .modal-popup-close {
-        display: block;
-        margin: 0 auto;
-        padding: 10px 30px;
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    
-    @keyframes slideUp {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-    </style>
 </body>
 </html> 

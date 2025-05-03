@@ -65,31 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Handle form submission on the Join Us page
-    const applicationForm = document.querySelector('.application-form');
-    if (applicationForm) {
-        applicationForm.addEventListener('submit', function(e) {
-            // Form will now be handled by Formspree
-            // Keep basic validation to improve user experience
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const position = document.getElementById('position').value;
-            const education = document.getElementById('education').value;
-            const message = document.getElementById('message').value;
-            const resume = document.getElementById('resume').files[0];
-            
-            if (!name || !email || !position || !education || !message) {
-                e.preventDefault(); // Prevent form submission
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Copy email to _replyto field for Formspree
-            document.getElementById('_replyto').value = email;
-            
-            // Form will be submitted to Formspree if validation passes
-            // No need to reset the form as the page will be redirected
+    // Handle "Apply Now" button clicks to show email instructions
+    const applyDialogButtons = document.querySelectorAll('.apply-now-dialog-button');
+    console.log('Found apply buttons:', applyDialogButtons.length);
+    if (applyDialogButtons.length > 0) {
+        applyDialogButtons.forEach(button => {
+            button.addEventListener('click', showApplyDialog);
         });
+    } else {
+        console.error('No apply buttons found with class .apply-now-dialog-button');
     }
     
     // Make all background videos loop continuously, even if they end
@@ -135,4 +119,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-}); 
+}); });
