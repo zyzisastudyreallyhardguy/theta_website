@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THETA TEAM - Thank You</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .thank-you-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+        
+        .thank-you-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, #00c6b0, #6a50c7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .thank-you-message {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .return-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #00c6b0, #6a50c7);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 2rem;
+        }
+        
+        .return-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(106, 80, 199, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/theta_logo.png" alt="THETA TEAM" class="logo">
+            </a>
+        </div>
+        <div class="institutions">
+            <p>LTI lab, Monash School of Medicine</p>
+            <p>TrustAGI lab, Griffith University</p>
+            <p>Paula Fox Melanoma and Cancer Center</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="thank-you-container">
+            <h1 class="thank-you-title">Thank You for Your Application!</h1>
+            <div class="thank-you-message">
+                <p>We have received your submission and appreciate your interest in joining the THETA TEAM.</p>
+                <p>Our team will review your application and get back to you as soon as possible.</p>
+                <p>If you have any questions in the meantime, please don't hesitate to contact us.</p>
+            </div>
+            <a href="index.html" class="return-button">Return to Homepage</a>
+        </div>
+        
+        <!-- Add video background -->
+        <div class="video-background">
+            <video autoplay muted loop playsinline>
+                <source src="videos/Video Playback.mp4" type="video/mp4">
+                <source src="videos/background.webm" type="video/webm">
+                <img src="images/fallback-bg.jpg" alt="THETA TEAM background">
+            </video>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

@@ -73,6 +73,7 @@ header {
     position: relative;
     margin: 0 20px;
     overflow: hidden;
+    gap: 2rem;
 }
 
 .hero-content {
@@ -85,17 +86,19 @@ header {
     backdrop-filter: blur(3px);
     margin: 20px;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .main-title {
-    font-size: 4rem;
+    font-size: 5vw;
     font-weight: bold;
     line-height: 1.2;
     text-align: center;
+    max-font-size: 4rem;
 }
 
 .subtitle {
-    font-size: 4rem;
+    font-size: 5vw;
 }
 
 .gradient-text {
@@ -103,7 +106,7 @@ header {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-size: 4rem;
+    font-size: 5vw;
 }
 
 /* Navigation section */
@@ -116,6 +119,7 @@ header {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     z-index: 10;
+    flex-wrap: wrap;
 }
 
 .nav-item {
@@ -132,7 +136,7 @@ header {
 }
 
 .nav-item h3 {
-    font-size: 2.0rem;
+    font-size: calc(1rem + 1vw);
     font-weight: normal;
     white-space: nowrap;
     display: flex;
@@ -184,12 +188,14 @@ header {
     }
 
     .hero {
-        min-height: 70vh;
+        min-height: 80vh;
+        justify-content: flex-start;
+        gap: 4rem;
     }
 
     .hero-content {
-        margin-top: 0;
-        margin-bottom: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
     }
 
     .main-title, .subtitle, .gradient-text {
@@ -197,10 +203,12 @@ header {
     }
 
     .navigation {
-        flex-direction: column;
+        margin-top: 1rem;
+        position: relative;
         align-items: center;
         gap: 0.5rem;
         padding: 1rem;
+        flex-direction: column;
     }
     
     .nav-item {
@@ -236,6 +244,10 @@ header {
     
     .hero-content {
         padding: 0.5rem;
+    }
+
+    .hero {
+        gap: 5rem;
     }
 }
 

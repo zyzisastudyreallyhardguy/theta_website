@@ -240,6 +240,101 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 5px 15px rgba(106, 80, 199, 0.4);
 }
 
+/* Application Instructions */
+.application-instructions {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.instruction-content {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.instruction-content p {
+    margin-bottom: 1.5rem;
+}
+
+.instruction-list {
+    margin: 2rem 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.instruction-list h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.instruction-list h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #00c6b0, #6a50c7);
+    border-radius: 2px;
+}
+
+.instruction-list ul {
+    padding-left: 1.5rem;
+}
+
+.instruction-list li {
+    margin-bottom: 0.8rem;
+}
+
+.email-link {
+    color: #00c6b0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #6a50c7;
+    text-decoration: underline;
+}
+
+.contact-message {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive styles for instructions */
+@media (max-width: 768px) {
+    .application-instructions {
+        padding: 1.5rem;
+    }
+    
+    .instruction-content {
+        font-size: 1rem;
+    }
+    
+    .instruction-list h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .application-instructions {
+        padding: 1rem;
+    }
+    
+    .instruction-list {
+        padding: 1rem;
+    }
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .positions-container {

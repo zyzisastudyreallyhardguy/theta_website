@@ -69,9 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const applicationForm = document.querySelector('.application-form');
     if (applicationForm) {
         applicationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic validation
+            // Form will now be handled by Formspree
+            // Keep basic validation to improve user experience
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const position = document.getElementById('position').value;
@@ -79,16 +78,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = document.getElementById('message').value;
             const resume = document.getElementById('resume').files[0];
             
-            if (!name || !email || !position || !education || !message || !resume) {
+            if (!name || !email || !position || !education || !message) {
+                e.preventDefault(); // Prevent form submission
                 alert('Please fill in all required fields.');
                 return;
             }
             
-            // Show success message (in production, this would submit to a server)
-            alert('Thank you for your application! We will be in touch soon.');
+            // Copy email to _replyto field for Formspree
+            document.getElementById('_replyto').value = email;
             
-            // Reset the form
-            applicationForm.reset();
+            // Form will be submitted to Formspree if validation passes
+            // No need to reset the form as the page will be redirected
         });
     }
     
