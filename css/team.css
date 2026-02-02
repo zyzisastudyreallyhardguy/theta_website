@@ -71,7 +71,7 @@
 }
 
 .organizer-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 }
 
 .supervisors-grid {
@@ -146,6 +146,7 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
+
     .organizer-grid,
     .supervisors-grid,
     .members-grid {
@@ -163,6 +164,7 @@
 }
 
 @media (max-width: 480px) {
+
     .organizer-grid,
     .supervisors-grid,
     .members-grid {
@@ -179,14 +181,15 @@
 
 .half-width {
     flex: 1;
-    min-width: 0; /* Prevent flex items from overflowing */
+    min-width: 0;
+    /* Prevent flex items from overflowing */
 }
 
 /* In your css/team.css file */
 .supervisors-section {
     background-color: rgba(20, 20, 20, 0.8);
     border-radius: 10px;
-    
+
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     /* If you want a subtle gradient background instead */
     background: linear-gradient(145deg, rgba(69, 21, 0, 0.9), rgba(30, 30, 30, 0.9));
@@ -197,8 +200,8 @@
     .team-row {
         flex-direction: column;
     }
-    
+
     .half-width {
         width: 100%;
     }
-} 
+}
